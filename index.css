@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  border: solid 1px #c6426e;
+  color: #c6426e;
+  background: transparent;
+  padding: 10px;
+  font-size: 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: #c6426e;
+  text-decoration: none;
+  color: #642b73;
+}
+
+/* Here... */
+.check {
+  position: fixed;
+  left: calc(50% - 30px);
+  top: calc(50% + 30px);
+  border: solid 4px rgba(145 203 14);
+  width: 48px;
+  height: 32px;
+  margin: -50px 0 0 -100px;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+  transform-origin: top left;
+}
+
+button:hover + .check {
+  animation: start 1s ease;
+  /* Override default play state paused of codepen iframe */
+  animation-play-state: running !important;
+}
+
+@keyframes start {
+  0% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  50% {
+    opacity: 1;
+    width: 0;
+    height: 32px;
+  }
+  100% {
+    width: 48px;
+  }
+}
